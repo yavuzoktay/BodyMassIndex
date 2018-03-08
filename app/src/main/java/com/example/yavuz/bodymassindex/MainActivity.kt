@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
             override fun onClick(p0: View?) {
                 var result1:Double = 0.0
                 result1=(weightText.text.toString().toDouble())/(((heightText.text.toString().toDouble()/100))*(heightText.text.toString().toDouble()/100))
-                result.text=result1.toString().format(3)
+                result.text=result1.toString().toDouble().formatla(2)
 
                 when (result1) {
                     in 0..18 -> resultWrite.text="Underweight"
@@ -87,10 +87,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-
-
-
+    fun Double.formatla(howManyNumber:Int)=java.lang.String.format("%.${howManyNumber}f",this)
+    
 
 }
 
